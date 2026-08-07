@@ -6,50 +6,201 @@
 <title>FirmSearch.org</title>
 
 <style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f4f4;
-    color:#222;
-    text-align:center;
-    margin:0;
-    padding:40px;
+* {
+    box-sizing: border-box;
 }
 
-.container{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,.15);
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background: #f4f6f9;
+    line-height: 1.6;
 }
 
-h1{
-    font-size:48px;
-    margin-bottom:10px;
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-input{
-    width:90%;
-    padding:15px;
-    font-size:18px;
-    border-radius:8px;
-    border:1px solid #bbb;
+header {
+    text-align: center;
+    padding: 20px 10px;
 }
 
-button{
-    margin-top:20px;
-    padding:15px 30px;
-    font-size:18px;
-    background:#003366;
-    color:white;
-    border:none;
-    border-radius:8px;
+/* Responsive logo — will NOT run off a phone screen */
+.logo {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 180px;
+    margin: 0 auto 15px;
 }
 
-.footer{
-    margin-top:40px;
-    color:#666;
+h1 {
+    margin: 5px 0;
+    color: #0a5db3;
+    font-size: clamp(28px, 7vw, 48px);
+}
+
+h2 {
+    margin: 0 0 10px;
+    color: #555;
+    font-size: clamp(17px, 4vw, 23px);
+    font-weight: normal;
+}
+
+.tagline {
+    margin: 10px 0 20px;
+    color: #0a5db3;
+    font-weight: bold;
+    font-size: clamp(16px, 4vw, 22px);
+}
+
+.card {
+    background: white;
+    border: 1px solid #e1e5ea;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 6px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    background: #fff;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.small {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+}
+
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #0a5db3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #084b91;
+}
+
+.rules {
+    background: #fff9eb;
+    border: 1px solid #f0d98a;
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.rules h3 {
+    margin-top: 0;
+    color: #8a6500;
+}
+
+.rules ul {
+    padding-left: 20px;
+}
+
+.rules li {
+    margin-bottom: 7px;
+}
+
+.accept {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.accept input {
+    width: auto;
+    margin-top: 4px;
+}
+
+.donate {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.donate a {
+    display: inline-block;
+    margin: 6px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: #0a5db3;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.contact a {
+    color: #0a5db3;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    margin: 30px 0 10px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    header {
+        padding: 10px 5px;
+    }
+
+    .logo {
+        max-height: 120px;
+    }
+
+    .donate a {
+        display: block;
+        margin: 8px 0;
+    }
 }
 </style>
 </head>
@@ -58,30 +209,156 @@ button{
 
 <div class="container">
 
-<h1>FirmSearch.org</h1>
+<header>
 
-<h2>Human-Powered Research</h2>
+    <!-- Responsive FirmSearch logo -->
+    <img
+        class="logo"
+        src="https://i.imgur.com/Prf5KjN.png"
+        alt="FirmSearch.org Logo">
 
-<p>
-Looking for information, sources, or help tracking something down?
-Send us your search request and we'll do our best to help.
-</p>
+    <h1>FirmSearch.org</h1>
 
-<input type="text" placeholder="What are you looking for?">
+    <h2>Human-Powered Research</h2>
 
-<br>
+    <div class="tagline">
+        Real research. Real replies. Real people.
+    </div>
 
-<button>Submit Search Request</button>
+</header>
 
-<p><strong>Free • No Account Required • Community Supported • No Paywalls</strong></p>
+<div class="card">
 
-<p><em>"We're nothing without your input 😉"</em></p>
+    <h2>Submit a Research Request</h2>
 
-<p>If this search saved you time, tips are appreciated but never expected.</p>
+    <p>
+        Looking for information, sources, records, or help tracking
+        something down? Tell us what you're looking for and we'll do
+        our best to help.
+    </p>
 
-<div class="footer">
-© 2026 LevinEric Co.
+    <form action="mailto:ric8_98@yahoo.com"
+          method="post"
+          enctype="text/plain">
+
+        <label for="name">Your Name</label>
+
+        <input
+            type="text"
+            id="name"
+            name="Name"
+            placeholder="Your name"
+            required>
+
+        <label for="email">Your Email</label>
+
+        <input
+            type="email"
+            id="email"
+            name="Email"
+            placeholder="you@example.com"
+            required>
+
+        <label for="request">What are you looking for?</label>
+
+        <textarea
+            id="request"
+            name="Research Request"
+            placeholder="Describe what you would like us to research..."
+            required></textarea>
+
+        <div class="small">
+            Please provide as much useful information as possible.
+        </div>
+
+        <div class="accept">
+
+            <input
+                type="checkbox"
+                id="agree"
+                required>
+
+            <label for="agree">
+                I understand and agree that FirmSearch accepts
+                lawful research requests only.
+            </label>
+
+        </div>
+
+        <button type="submit">
+            Submit Research Request
+        </button>
+
+    </form>
+
 </div>
+
+<div class="card rules">
+
+    <h3>FirmSearch Research Standards</h3>
+
+    <p>
+        FirmSearch is intended for legitimate, lawful research and
+        information-gathering purposes.
+    </p>
+
+    <ul>
+        <li>No requests involving illegal activity.</li>
+        <li>No hacking, unauthorized access, or cyber abuse.</li>
+        <li>No fraud, scams, or deception.</li>
+        <li>No harassment, stalking, or invasion of privacy.</li>
+        <li>No explicit sexual or exploitative material.</li>
+        <li>No requests intended to harm another person.</li>
+        <li>No other unlawful, dangerous, or seriously unethical requests.</li>
+    </ul>
+
+    <p>
+        FirmSearch reserves the right to decline any request that
+        appears unlawful, unsafe, abusive, or inappropriate.
+    </p>
+
+</div>
+
+<div class="card">
+
+    <h2>What Happens Next?</h2>
+
+    <p>
+        Every request is reviewed by a real person. We aim to respond
+        within <strong>24–72 hours</strong>, depending on the complexity
+        of the request.
+    </p>
+
+    <p>
+        <strong>Free. No account required.</strong>
+    </p>
+
+</div>
+
+<div class="donate">
+
+    <h2>Support FirmSearch</h2>
+
+    <p>
+        If our research helped you, voluntary tips are appreciated.
+    </p>
+
+    <!-- Donation links can be added here when your payment links are ready -->
+
+</div>
+
+<div class="contact">
+
+    Questions?
+    <a href="mailto:ric8_98@yahoo.com">
+        Contact FirmSearch
+    </a>
+
+</div>
+
+<footer>
+    © 2026 FirmSearch.org — Lawful Research Services
+</footer>
 
 </div>
 
