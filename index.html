@@ -202,6 +202,55 @@ footer {
         margin: 8px 0;
     }
 }
+    /* Start Here buttons */
+.start-here {
+    text-align: center;
+    margin: 25px 0 30px;
+}
+
+.start-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+}
+
+.start-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #075a9c;
+}
+
+.start-button:first-child {
+    background: white;
+    color: #075a9c;
+}
+
+.start-button:last-child {
+    background: #075a9c;
+    color: white;
+    animation: gentlePulse 2.5s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
 </style>
 </head>
 
