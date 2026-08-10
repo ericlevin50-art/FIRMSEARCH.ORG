@@ -1,1 +1,52 @@
+Oh, yes. I actually like that idea for FirmSearch, Your Majesty. It gives the site a way to remain free while offering people a way to move their request to the front of the line.
 
+I would make one important change, though:
+
+Sell priority, not a guaranteed result
+
+I'd phrase it something like:
+
+Need it sooner? Choose Priority Research
+
+Priority	Price	Target turnaround
+
+Standard	Free	Best effort
+Priority	$10	Within 12 hours
+Rush	$25	Within 2 hours
+Urgent	$50	Within 1 hour
+
+
+And underneath:
+
+> Turnaround times are targets, not guarantees. Complex requests, unavailable sources, or circumstances beyond our control may require additional time. Payment prioritizes your request but does not guarantee that useful results will be found.
+
+
+
+That last sentence is really important for how you're setting this up.
+
+I also like your pricing
+
+The progression makes intuitive sense:
+
+Free → $10 → $25 → $50
+
+And $50 for someone who genuinely needs a person to stop what they're doing and work on something immediately doesn't strike me as unreasonable.
+
+One thing I'd consider: don't promise "less than an hour." I'd use "within 1 hour" because it's much cleaner and easier to understand.
+
+And technically, this doesn't have to be complicated
+
+We could use [Stripe Payment Links](https://stripe.com/payments/payment-links?utm_source=chatgpt.com). Stripe says Payment Links can be created without coding and can be shared or embedded on your website. Their current standard domestic-card pricing starts at 2.9% + $0.30 per successful transaction. 
+
+So we could eventually have four buttons:
+
+FREE — Standard Research
+$10 — 12-Hour Priority
+$25 — 2-Hour Rush
+$50 — 1-Hour Urgent
+
+But I would not build the payment system quite yet.
+
+First, let's finish the basic legal/privacy structure we've started. Then we can add the paid-request system in a way where the research request and payment are connected, rather than having someone pay $25 and then we have to figure out which request it belongs to.
+
+That's the part I want to get right.
