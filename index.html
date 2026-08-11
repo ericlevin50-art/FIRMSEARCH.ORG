@@ -30,11 +30,10 @@ header {
     padding: 20px 10px;
 }
 
-/* Responsive logo — will NOT run off a phone screen */
 .logo {
     display: block;
     max-width: 100%;
-    width: 100٪;
+    width: 100%;
     height: auto;
     max-height: 300px;
     margin: 0 auto 15px;
@@ -121,19 +120,6 @@ button:hover {
     padding: 18px;
 }
 
-.rules h3 {
-    margin-top: 0;
-    color: #8a6500;
-}
-
-.rules ul {
-    padding-left: 20px;
-}
-
-.rules li {
-    margin-bottom: 7px;
-}
-
 .accept {
     display: flex;
     align-items: flex-start;
@@ -147,72 +133,9 @@ button:hover {
     margin-top: 4px;
 }
 
-.donate {
-    text-align: center;
-    margin: 25px 0;
-}
-
-.donate a {
-    display: inline-block;
-    margin: 6px;
-    padding: 10px 16px;
-    border-radius: 8px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    background: #0a5db3;
-}
-
-.contact {
-    text-align: center;
-    margin-top: 25px;
-}
-
-.contact a {
-    color: #0a5db3;
-    font-weight: bold;
-}
-
-footer {
-    text-align: center;
-    color: #666;
-    font-size: 13px;
-    margin: 30px 0 10px;
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-
-    .card {
-        padding: 16px;
-    }
-
-    header {
-        padding: 10px 5px;
-    }
-
-    .logo {
-        max-height: 120px;
-    }
-
-    .donate a {
-        display: block;
-        margin: 8px 0;
-    }
-}
-    /* Start Here buttons */
 .start-here {
     text-align: center;
     margin: 25px 0 30px;
-}
-
-.start-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 14px;
-    letter-spacing: 1px;
 }
 
 .start-buttons {
@@ -240,26 +163,24 @@ footer {
 .start-button:last-child {
     background: #075a9c;
     color: white;
-    animation: gentlePulse 2.5s ease-in-out 3;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-@keyframes gentlePulse {
-    0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 rgba(7, 90, 156, 0);
-    }
-
-    50% {
-        transform: scale(1.04);
-        box-shadow: 0 0 14px rgba(7, 90, 156, 0.35);
-    }
+.contact {
+    text-align: center;
+    margin-top: 25px;
 }
-    .start-button:last-child:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-    }
-    
+
+.contact a {
+    color: #0a5db3;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    color: #666;
+    font-size: 13px;
+    margin: 30px 0 10px;
+}
 </style>
 </head>
 
@@ -269,180 +190,204 @@ footer {
 
 <header>
 
-    <!-- Responsive FirmSearch logo -->
-    <img
-        class="logo"
-        src="9925d2946c90b8e06d5b0e4efd08606002c0326ec25dae8a1e5909a336394223.png"
-        alt="FirmSearch.org Logo">
+<img
+class="logo"
+src="9925d2946c90b8e06d5b0e4efd08606002c0326ec25dae8a1e5909a336394223.png"
+alt="FirmSearch.org Logo">
 
-    
+<h2>Human-Powered ReSearching</h2>
 
-    <h2>Human-Powered ReSearching</h2>
-
-    <div class="tagline">
-        Real research. Real replies. Real people.
-    </div>
-
-
-
-    <div class="start-buttons">
-    <a href="#research-request" class="start-button">
-        Request a Search
-    </a>
-
-    <a href="#manual-search" class="start-button">
-        Try Your Own Search
-    </a>
+<div class="tagline">
+Real research. Real replies. Real people.
 </div>
+
+<div class="start-buttons">
+
+<a href="#research-request" class="start-button">
+Request a Search
+</a>
+
+<a href="#manual-search" class="start-button">
+Try Your Own Search
+</a>
+
 </div>
+
 </header>
+<div id="research-request" class="card">
+
+<h2>Submit a Research Request</h2>
+
+<p>
+Looking for information, sources, records, or help tracking
+something down? Tell us what you're looking for and we'll do
+our best to help.
+</p>
+
+<form action="https://formspree.io/f/xppaqkwq" method="post">
+
+<input type="hidden" name="_next" value="https://firmsearch.org/thank-you.html">
+
+<label for="name">Your Name</label>
+
+<input
+type="text"
+id="name"
+name="Name"
+placeholder="Your name"
+required>
+
+<label for="email">Your Email</label>
+
+<input
+type="email"
+id="email"
+name="Email"
+placeholder="you@example.com"
+required>
+
+<label for="request">What are you looking for?</label>
+
+<textarea
+id="request"
+name="Research Request"
+placeholder="Describe what you would like us to research..."
+required></textarea>
+
+<div class="small">
+Please provide as much useful information as possible.
+</div>
+
+<div class="accept">
+
+<input
+type="checkbox"
+id="agree"
+required>
+
+<label for="agree">
+I understand that FirmSearch.org accepts lawful research requests and reserves the right to decline any submission.
+Please review our <a href="research-standards.html">Research Standards</a>.
+</label>
+
+</div>
+
+
+<button type="submit">
+Submit Research Request
+</button>
+
+</form>
+
+</div>
+
+
 <div id="manual-search" class="card">
 
-<div id="research-request"class="card">
+<h2>Manual Search</h2>
 
-    <h2>Submit a Research Request</h2>
+<p>
+Search the web yourself using Google.
+</p>
 
-    <p>
-        Looking for information, sources, records, or help tracking
-        something down? Tell us what you're looking for and we'll do
-        our best to help.
-    </p>
+<form action="https://www.google.com/search" method="get" target="_blank">
 
-    <form action="https://formspree.io/f/xppaqkwq"
-      method="post">
-    <input type="hidden" name="_next" value="https://firmsearch.org/thank-you.html">
+<input
+type="text"
+name="q"
+placeholder="What are you looking for?"
+required>
 
-    <label for="name">Your Name</label>
+<button type="submit">
+Search Google
+</button>
 
-        <input
-            type="text"
-            id="name"
-            name="Name"
-            placeholder="Your name"
-            required>
-
-        <label for="email">Your Email</label>
-
-        <input
-            type="email"
-            id="email"
-            name="Email"
-            placeholder="you@example.com"
-            required>
-
-        <label for="request">What are you looking for?</label>
-
-        <textarea
-            id="request"
-            name="Research Request"
-            placeholder="Describe what you would like us to research..."
-            required></textarea>
-
-        <div class="small">
-            Please provide as much useful information as possible.
-        </div>
-
-        <div class="accept">
-
-            <input
-                type="checkbox"
-                id="agree"
-                required>
-
-            <label for="agree">
-  I understand that FirmSearch.org accepts lawful research requests and reserves the right to decline any submission.
-  Please review our <a href="research-standards.html">Research Standards</a>.
-</label>
-        </div>
-        </div>
-    <div id="manual-search" class="card">
-            <h2>Manual Search</h2>
-
-    <p>Search the web yourself using Google.</p>
-
-    <form action="https://www.google.com/search" method="get" target="_blank">
-        <input
-            type="text"
-            name="q"
-            placeholder="What are you looking for?"
-            required
-        >
-
-        <button type="submit">Search Google</button>
-    </form>
-</div>
-<input type="hidden" name="_next" value="https://firmsearch.org/thankyou.html">
-        <button type="submit">
-            Submit Research Request
-        </button>
-
-    </form>
+</form>
 
 </div>
-
 
 
 <div class="card">
 
-    <h2>What Happens Next?</h2>
+<h2>What Happens Next?</h2>
 
-    <p>
-        Every request is reviewed by a real person.
-        Standard research requests are typically completed within
-        <strong>24–72 hours</strong>, depending on the complexity of the request.
-    </p>
+<p>
+Every request is reviewed by a real person.
+Standard research requests are typically completed within
+<strong>24–72 hours</strong>, depending on the complexity of the request.
+</p>
 
-    <p>
-        Need it sooner? Expedited turnaround options may be available for a fee.
-    </p>
+<p>
+Need it sooner? Expedited turnaround options may be available for a fee.
+</p>
 
-    <p>
-        <strong>Free. No account required.</strong>
-    </p>
+<p>
+<strong>Free. No account required.</strong>
+</p>
 
 </div>
+
 
 <div class="donate">
 
-    <h2>Support FirmSearch</h2>
+<h2>Support FirmSearch</h2>
 
-    <p>
-        If our research helped you, voluntary tips are appreciated.
-    </p>
-
-    <!-- Donation links can be added here when your payment links are ready -->
+<p>
+If our research helped you, voluntary tips are appreciated.
+</p>
 
 </div>
 <div class="about">
-  <h2>About FirmSearch</h2>
-  <p>
-    FirmSearch is human-powered research. We help people find information,
-    sources, and answers by using careful online research instead of relying
-    only on automated results.
-  </p>
-  <p>
-    Every request is reviewed by a real person who takes the time to understand
-    what you're looking for and point you toward useful information.
-  </p>
+
+<h2>About FirmSearch</h2>
+
+<p>
+FirmSearch is human-powered research. We help people find information,
+sources, and answers by using careful online research instead of relying
+only on automated results.
+</p>
+
+<p>
+Every request is reviewed by a real person who takes the time to understand
+what you're looking for and point you toward useful information.
+</p>
+
 </div>
+
+
 <div class="contact">
 
-    Questions?
-    <a href="mailto:ric8_98@yahoo.com">
-        Contact FirmSearch
-    </a>
+Questions?
+
+<a href="mailto:ric8_98@yahoo.com">
+Contact FirmSearch
+</a>
 
 </div>
+
 
 <footer>
-    © 2026 FirmSearch.org — Lawful Research Services
+© 2026 FirmSearch.org — Lawful Research Services
 </footer>
 
+
 </div>
+
+
 <footer style="text-align:center; margin-top:30px; padding:20px; font-size:14px;">
-    <a href="research-standards.html">Research Standards</a>
-    &nbsp; | &nbsp;
-    <a href="terms.html">Terms & Research Disclaimer</a>
+
+<a href="research-standards.html">
+Research Standards
+</a>
+
+&nbsp; | &nbsp;
+
+<a href="terms.html">
+Terms & Research Disclaimer
+</a>
+
 </footer>
+
+
 </body>
 </html>
