@@ -215,59 +215,126 @@ our best to help.
 </p>
 
 <form action="https://formspree.io/f/xppaqkwq" method="post">
+<form id="researchForm" action="https://formspree.io/f/xppaqkwq" method="post">
 
-<input type="hidden" name="_next" value="https://firmsearch.org/thank-you.html">
+    <label for="name">Your Name</label>
 
-<label for="name">Your Name</label>
+    <input
+        type="text"
+        id="name"
+        name="Name"
+        placeholder="Your name"
+        required>
 
-<input
-type="text"
-id="name"
-name="Name"
-placeholder="Your name"
-required>
+    <label for="email">Your Email</label>
 
-<label for="email">Your Email</label>
+    <input
+        type="email"
+        id="email"
+        name="Email"
+        placeholder="you@example.com"
+        required>
 
-<input
-type="email"
-id="email"
-name="Email"
-placeholder="you@example.com"
-required>
+    <label for="request">What are you looking for?</label>
 
-<label for="request">What are you looking for?</label>
+    <textarea
+        id="request"
+        name="Research Request"
+        placeholder="Describe what you would like us to research..."
+        required></textarea>
 
-<textarea
-id="request"
-name="Research Request"
-placeholder="Describe what you would like us to research..."
-required></textarea>
+    <div class="small">
+        Please provide as much useful information as possible.
+    </div>
 
-<div class="small">
-Please provide as much useful information as possible.
-</div>
+    <div class="accept">
 
-<div class="accept">
+        <input
+            type="checkbox"
+            id="agree"
+            required>
 
-<input
-type="checkbox"
-id="agree"
-required>
+        <label for="agree">
+            I understand that FirmSearch.org accepts lawful research requests
+            and reserves the right to decline any submission.
+            Please review our
+            <a href="research-standards.html">Research Standards</a>.
+        </label>
 
-<label for="agree">
-I understand that FirmSearch.org accepts lawful research requests and reserves the right to decline any submission.
-Please review our <a href="research-standards.html">Research Standards</a>.
-</label>
+    </div>
 
-</div>
-
-
-<button type="submit">
-Submit Research Request
-</button>
+    <button type="submit">
+        Submit Research Request
+    </button>
 
 </form>
+
+<div id="confirmation" style="display:none;">
+
+    <h2>Request Received!</h2>
+
+    <p>
+        Thanks for your research request. We've received it and will
+        take a look.
+    </p>
+
+    <p>
+        We appreciate your patience while we research your request.
+    </p>
+
+</div>
+
+<script>
+document.getElementById("researchForm").addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const form = event.target;
+    const confirmation = document.getElementById("confirmation");
+    const button = form.querySelector("button");
+
+    button.disabled = true;
+    button.textContent = "Submitting...";
+
+    try {
+
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+
+            form.style.display = "none";
+            confirmation.style.display = "block";
+
+            confirmation.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        } else {
+
+            button.disabled = false;
+            button.textContent = "Submit Research Request";
+
+            alert("Something went wrong. Please try submitting your request again.");
+
+        }
+
+    } catch (error) {
+
+        button.disabled = false;
+        button.textContent = "Submit Research Request";
+
+        alert("Something went wrong. Please check your connection and try again.");
+
+    }
+
+});
+    </script>
 
 </div>
 
