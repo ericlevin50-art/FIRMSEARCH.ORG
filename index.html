@@ -181,6 +181,112 @@ footer {
     font-size: 13px;
     margin: 30px 0 10px;
 }
+
+.support-box {
+  position: relative;
+  max-width: 620px;
+  margin: 35px auto;
+  padding: 38px 25px;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #f5f7fb);
+  border: 1px solid #d9dee8;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.support-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: rgba(30, 55, 90, 0.035);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.support-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.support-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eef2f8;
+  color: #29496b;
+  font-size: 25px;
+}
+
+.support-box h2 {
+  margin: 8px 0 10px;
+  color: #203a59;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.support-box p {
+  max-width: 480px;
+  margin: 0 auto 22px;
+  color: #596575;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.support-button {
+  display: inline-block;
+  padding: 14px 30px;
+  background: #29496b;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  box-shadow: 0 5px 14px rgba(41, 73, 107, 0.22);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.support-button:hover {
+  background: #1f3b58;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(41, 73, 107, 0.28);
+}
+
+.support-note {
+  margin-top: 17px !important;
+  margin-bottom: 0 !important;
+  font-size: 13px !important;
+  color: #7a8491 !important;
+}
+
+@media (max-width: 600px) {
+  .support-box {
+    margin: 25px 12px;
+    padding: 32px 18px;
+  }
+
+  .support-box h2 {
+    font-size: 24px;
+  }
+
+  .support-watermark {
+    font-size: 48px;
+  }
+
+  .support-button {
+    width: 85%;
+    max-width: 300px;
+  }
+}
 </style>
 </head>
 
